@@ -8,7 +8,7 @@ import fetch from 'node-fetch'
 const {
     POSTHOG_PROJECT_KEY,
     POSTHOG_API_KEY,
-    POSTHOG_API_HOST = 'https://app.posthog.com',
+    POSTHOG_API_HOST = 'https://e.abla.io',
     POSTHOG_API_PROJECT = '11213',
 } = process.env
 

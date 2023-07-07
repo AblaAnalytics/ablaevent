@@ -4,7 +4,7 @@ import { PostHogPersistence } from '../posthog-persistence'
 describe('surveys', () => {
     given('config', () => ({
         token: 'testtoken',
-        api_host: 'https://app.posthog.com',
+        api_host: 'https://e.abla.io',
         persistence: 'memory',
     }))
     given('instance', () => ({
@@ -62,7 +62,7 @@ describe('surveys', () => {
             expect(data).toEqual(firstSurveys)
         })
         expect(given.instance._send_request).toHaveBeenCalledWith(
-            'https://app.posthog.com/api/surveys/?token=testtoken',
+            'https://e.abla.io/api/surveys/?token=testtoken',
             {},
             { method: 'GET' },
             expect.any(Function)
@@ -83,7 +83,7 @@ describe('surveys', () => {
             expect(data).toEqual(firstSurveys)
         })
         expect(given.instance._send_request).toHaveBeenCalledWith(
-            'https://app.posthog.com/api/surveys/?token=testtoken',
+            'https://e.abla.io/api/surveys/?token=testtoken',
             {},
             { method: 'GET' },
             expect.any(Function)

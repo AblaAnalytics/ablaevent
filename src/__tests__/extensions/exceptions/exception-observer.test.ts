@@ -8,7 +8,7 @@ describe('Exception Observer', () => {
     let mockPostHogInstance: any
     const mockCapture = jest.fn()
     const mockConfig: Partial<PostHogConfig> = {
-        api_host: 'https://app.posthog.com',
+        api_host: 'https://e.abla.io',
     }
 
     beforeEach(() => {

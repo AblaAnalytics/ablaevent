@@ -728,8 +728,8 @@ describe('group()', () => {
         given.lib.group('organization', 'org::6')
         expect(given.lib.getGroups()).toEqual({ organization: 'org::6' })
 
-        given.lib.group('instance', 'app.posthog.com')
-        expect(given.lib.getGroups()).toEqual({ organization: 'org::6', instance: 'app.posthog.com' })
+        given.lib.group('instance', 'e.abla.io')
+        expect(given.lib.getGroups()).toEqual({ organization: 'org::6', instance: 'e.abla.io' })
     })
 
     it('records info on groupProperties for groups', () => {
@@ -742,20 +742,20 @@ describe('group()', () => {
         expect(given.lib.getGroups()).toEqual({ organization: 'org::6' })
         expect(given.lib.persistence.props['$stored_group_properties']).toEqual({ organization: {} })
 
-        given.lib.group('instance', 'app.posthog.com')
-        expect(given.lib.getGroups()).toEqual({ organization: 'org::6', instance: 'app.posthog.com' })
+        given.lib.group('instance', 'e.abla.io')
+        expect(given.lib.getGroups()).toEqual({ organization: 'org::6', instance: 'e.abla.io' })
         expect(given.lib.persistence.props['$stored_group_properties']).toEqual({ organization: {}, instance: {} })
 
         // now add properties to the group
         given.lib.group('organization', 'org::7', { name: 'PostHog2' })
-        expect(given.lib.getGroups()).toEqual({ organization: 'org::7', instance: 'app.posthog.com' })
+        expect(given.lib.getGroups()).toEqual({ organization: 'org::7', instance: 'e.abla.io' })
         expect(given.lib.persistence.props['$stored_group_properties']).toEqual({
             organization: { name: 'PostHog2' },
             instance: {},
         })
 
-        given.lib.group('instance', 'app.posthog.com', { a: 'b' })
-        expect(given.lib.getGroups()).toEqual({ organization: 'org::7', instance: 'app.posthog.com' })
+        given.lib.group('instance', 'e.abla.io', { a: 'b' })
+        expect(given.lib.getGroups()).toEqual({ organization: 'org::7', instance: 'e.abla.io' })
         expect(given.lib.persistence.props['$stored_group_properties']).toEqual({
             organization: { name: 'PostHog2' },
             instance: { a: 'b' },
@@ -773,7 +773,7 @@ describe('group()', () => {
 
     it('results in a reloadFeatureFlags call if group changes', () => {
         given.lib.group('organization', 'org::5', { name: 'PostHog' })
-        given.lib.group('instance', 'app.posthog.com')
+        given.lib.group('instance', 'e.abla.io')
         given.lib.group('organization', 'org::5')
 
         expect(given.overrides.reloadFeatureFlags).toHaveBeenCalledTimes(2)
@@ -781,9 +781,9 @@ describe('group()', () => {
 
     it('results in a reloadFeatureFlags call if group properties change', () => {
         given.lib.group('organization', 'org::5')
-        given.lib.group('instance', 'app.posthog.com')
+        given.lib.group('instance', 'e.abla.io')
         given.lib.group('organization', 'org::5', { name: 'PostHog' })
-        given.lib.group('instance', 'app.posthog.com')
+        given.lib.group('instance', 'e.abla.io')
 
         expect(given.overrides.reloadFeatureFlags).toHaveBeenCalledTimes(3)
     })
@@ -818,7 +818,7 @@ describe('group()', () => {
 
         it('sends group information in event properties', () => {
             given.lib.group('organization', 'org::5')
-            given.lib.group('instance', 'app.posthog.com')
+            given.lib.group('instance', 'e.abla.io')
 
             given.lib.capture('some_event', { prop: 5 })
 
@@ -828,7 +828,7 @@ describe('group()', () => {
             expect(eventPayload.event).toEqual('some_event')
             expect(eventPayload.properties.$groups).toEqual({
                 organization: 'org::5',
-                instance: 'app.posthog.com',
+                instance: 'e.abla.io',
             })
         })
     })
@@ -854,11 +854,11 @@ describe('group()', () => {
     describe('reset group', () => {
         it('groups property is empty and reloads feature flags', () => {
             given.lib.group('organization', 'org::5')
-            given.lib.group('instance', 'app.posthog.com', { group: 'property', foo: 5 })
+            given.lib.group('instance', 'e.abla.io', { group: 'property', foo: 5 })
 
             expect(given.lib.persistence.props['$groups']).toEqual({
                 organization: 'org::5',
-                instance: 'app.posthog.com',
+                instance: 'e.abla.io',
             })
 
             expect(given.lib.persistence.props['$stored_group_properties']).toEqual({
@@ -988,16 +988,16 @@ describe('session_id', () => {
     })
 
     it('returns the replay URL', () => {
-        expect(given.lib.get_session_replay_url()).toEqual('https://app.posthog.com/replay/sessionId')
+        expect(given.lib.get_session_replay_url()).toEqual('https://e.abla.io/replay/sessionId')
     })
 
     it('returns the replay URL including timestamp', () => {
         expect(given.lib.get_session_replay_url({ withTimestamp: true })).toEqual(
-            'https://app.posthog.com/replay/sessionId?t=20' // default lookback is 10 seconds
+            'https://e.abla.io/replay/sessionId?t=20' // default lookback is 10 seconds
         )
 
         expect(given.lib.get_session_replay_url({ withTimestamp: true, timestampLookBack: 0 })).toEqual(
-            'https://app.posthog.com/replay/sessionId?t=30'
+            'https://e.abla.io/replay/sessionId?t=30'
         )
     })
 })

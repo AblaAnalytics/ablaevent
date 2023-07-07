@@ -5,4 +5,5 @@ module.exports = {
     modulePathIgnorePatterns: ['src/__tests__/setup.js', 'src/__tests__/helpers/'],
     clearMocks: true,
     testEnvironment: 'jsdom',
+    preset: 'ts-jest/presets/js-with-ts'
 }
