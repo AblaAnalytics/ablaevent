@@ -24,7 +24,7 @@ Visit your site and click around to generate some initial events.
 
 ## Option 2. Javascript Library
 
-Use this option if you want more granular control of how PostHog runs in your website and the events you capture. Recommended for teams with more stable products and more defined analytics requirements.
+Use this option if you want more granular control of how Ablaevent runs in your website and the events you capture. Recommended for teams with more stable products and more defined analytics requirements.
 
 ### Install the package
 
