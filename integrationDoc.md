@@ -7,7 +7,7 @@ Just add this snippet to your website and we'll automatically capture page views
 
 Insert this snippet in your website within the <head> tag.
 
- <pre>
+````
 
    <script>
 
@@ -16,7 +16,7 @@ Insert this snippet in your website within the <head> tag.
 
 </script>
 
-</pre>
+````
 
 ### Send events
 
@@ -28,20 +28,20 @@ Use this option if you want more granular control of how PostHog runs in your we
 
 ### Install the package
 
-<pre>
+````
 npm install ablaevent-js
 # OR
 yarn add ablaevent-js
 # OR
 pnpm add ablaevent-js
 
-</pre>
+````
 
 ### Configure & initialize 
 
-<pre>
+````
 import posthog from 'ablaevent-js'
 
 posthog.init('phc_ySCF4YinUf6DxprJ5B0jXtzgijeTqFkWPsIIfC3yTrC', { api_host: 'https://e.abla.io' })
 
-</pre>
+````
