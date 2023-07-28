@@ -102,7 +102,7 @@
   },
   "main": "dist/module.js",
   "module": "dist/es.js",
-  "name": "ablaevent-js",
+  "name": "ablaevent",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AblaAnalytics/ablaevent-js.git"
