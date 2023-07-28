@@ -3,8 +3,6 @@
 [![npm package](https://img.shields.io/npm/v/ablaevent-js?style=flat-square)](https://www.npmjs.com/package/ablaevent-js)
 [![MIT License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](https://opensource.org/licenses/MIT)
  
-For information on using this library in your app, [see PostHog Docs](https://posthog.com/docs/libraries/js).  
-This README is intended for developing the library itself.
 
 ## Testing
 
@@ -17,10 +15,7 @@ Testing on IE11 requires a bit more setup. TestCafe tests will use the
 playground application to test the locally built array.full.js bundle. It will
 also verify that the events emitted during the testing of playground are loaded
 into the Ablaevent app. By default it uses https://e.abla.io and the
-project with ID 11213. See the testcafe tests to see how to override these if
-needed. For PostHog internal users ask @benjackwhite or @hazzadous to invite you
-to the Project. You'll need to set `POSTHOG_API_KEY` to your personal API key, and
-`POSTHOG_PROJECT_KEY` to the key for the project you are using.
+project with ID 11213. 
 
 You'll also need to sign up to [BrowserStack](https://www.browserstack.com/).
 Note that if you are using CodeSpaces, these variables will already be available
