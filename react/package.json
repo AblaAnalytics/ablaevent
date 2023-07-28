@@ -1,11 +1,11 @@
 {
-    "name": "posthog-js-react",
+    "name": "ablaevent-js-react",
     "version": "1.0.0",
     "private": false,
-    "description": "Provides components and hooks for React integrations of PostHog. It is not published to NPM, but is used in the main posthog-js package.",
+    "description": "Provides components and hooks for React integrations of PostHog. It is not published to NPM, but is used in the main ablaevent-js package.",
     "repository": {
         "type": "git",
-        "url": "https://github.com/PostHog/posthog-js",
+        "url": "https://github.com/AblaAnalytics/ablaevent-js",
         "directory": "react"
     },
     "author": "hey@posthog.com",
