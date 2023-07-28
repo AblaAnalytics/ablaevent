@@ -1,3 +1,65 @@
+## 1.75.2 - 2023-07-26
+
+
+
+## 1.75.1 - 2023-07-26
+
+- fix: obey server side opt out for autocapture (#762)
+
+## 1.75.0 - 2023-07-25
+
+- feat: react to rate limiting responses (#757)
+
+## 1.74.0 - 2023-07-25
+
+- fix: Recording throttling for SVG-like things (#758)
+- chore(deps): bump semver from 5.7.1 to 5.7.2 in /react (#732)
+- chore(deps): bump semver from 6.3.0 to 6.3.1 in /playground/nextjs (#733)
+- chore(deps): bump word-wrap from 1.2.3 to 1.2.4 in /react (#746)
+- chore(deps): bump word-wrap from 1.2.3 to 1.2.4 (#747)
+- chore(deps): bump word-wrap from 1.2.3 to 1.2.4 in /playground/nextjs (#750)
+
+## 1.73.1 - 2023-07-21
+
+- fix: protect against bundling bugs (#754)
+
+## 1.73.0 - 2023-07-20
+
+- feat: use uuidv7 everywhere (#742)
+
+## 1.72.3 - 2023-07-19
+
+- fix: defensive about unload logging (#751)
+
+## 1.72.2 - 2023-07-19
+
+- fix(flags): Don't return undefined for flags when decide is not hit but flags exist (#748)
+
+## 1.72.1 - 2023-07-18
+
+- fix(flags): Make sure flags are reloaded only once on identify calls (#744)
+
+## 1.72.0 - 2023-07-18
+
+- feat(flags): Allow disabling flags on first load (#740)
+- chore: remove some slow tests that have served their purpose (#739)
+
+## 1.71.0 - 2023-07-13
+
+- chore: Removed people.set and mapped it to identify (#584)
+
+## 1.70.2 - 2023-07-11
+
+- feat: allow moving to UUID v7 by config in posthog-js (#731)
+
+## 1.70.1 - 2023-07-10
+
+- fix: UUIDs should not take literally forever to generate (#727)
+
+## 1.70.0 - 2023-07-07
+
+- feat: callback when session id changes (#725)
+
 ## 1.69.0 - 2023-07-05
 
 - feat: capture page title with pageview (#721)

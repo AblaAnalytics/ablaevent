@@ -14,10 +14,10 @@
         "prebuild": "npm run clean",
         "start": "tsc-watch",
         "clean": "rimraf -r dist",
-        "build": "npm run clean && cross-env NODE_ENV=production rollup -c rollup.config.ts",
+        "build": "yarn clean && cross-env NODE_ENV=production rollup -c rollup.config.ts",
         "test": "jest",
         "test:debug": "jest --runInBand",
-        "prepublishOnly": "npm run test && npm run build"
+        "prepublishOnly": "yarn test && yarn build"
     },
     "main": "dist/umd/index.js",
     "module": "dist/esm/index.js",
